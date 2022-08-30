@@ -1,0 +1,1695 @@
+<script>
+
+        console.log("Hola Mundo");
+
+        var miVariable = "freeCodeCamp";
+        console.log(miVariable);
+
+        miVariable = "Berny";
+        console.log(miVariable);
+
+        var a = "Berny";
+        var b = a;
+
+        console.log(a);
+        console.log(b);
+        let variable1 = 120;
+        variable1 = variable1 +1;
+        console.log(variable1);
+
+        variable1 += 2; //operador de asignación compuesta
+        console.log(variable1);
+
+        /* secuencias de escape
+
+        \' comilla simple
+        \" comilla doble
+        \\ barra invertida
+        \n linea nueva
+        \r retorno de carro
+        \t tabulacion
+        \b retroceso
+        \f salto de páfina
+        ...
+        */
+
+        /* concatenacion strings: */
+
+        let nombreCompleto = "Berny " + "Poblete";
+        console.log(nombreCompleto);
+
+        let verbo = "programar";
+        let mensaje = "Estoy aprendiendo a " + verbo + " con FreeCodeCamp";
+        console.log(mensaje);
+
+        let mensajeCompleto = "Estoy aprendiendo a programar";
+        let parteFinal = " con FreeCodeCamp";
+        mensajeCompleto += parteFinal;
+        console.log(mensajeCompleto);
+        console.log(mensajeCompleto + parteFinal);
+
+        /* longitud string */
+
+        let miCadena;
+        miCadena = "Bernardita"
+        console.log(miCadena.length);
+
+        /*notacion de corchetes*/
+
+        let lenguajeDeProgramacion = "JavaScript";
+        console.log(lenguajeDeProgramacion[0]);
+
+        /*ultimo caracter*/
+
+        let miCadenita = "Javascript";
+        console.log(miCadenita[miCadenita.length -1]);
+        /* Inmutabilidad de strings: se debe reasignar la string completa,
+        no se pueden cambiar caracteres individuales */
+
+
+        /* ARRAYS */
+
+        let miArreglo = [10, 20, 30];
+        miArreglo[0] = 4; /* los arrays SI son mutables */
+        miArreglo[1] = [1, 2]; /*genera arreglo anidado [4, [1,2], 30]*/
+
+        console.log(miArreglo[1][0]); /* accede al valor 1 del arreglo anterior*/
+
+
+
+        /* MÉTODOS */
+
+
+        let estaciones = ["invierno", "otoño", "primavera"];
+        estaciones.push("verano");  /* ["invierno", "otoño", "primavera", "verano"] */
+
+        let estaciones = ["invierno", "otoño", "primavera", "verano"];
+        estaciones.pop(); /* remueve el último elemento Y LO RETORNA! */
+        let estacion = estaciones.pop(); /*verano*/
+
+        let estaciones = ["invierno", "otoño", "primavera", "verano"];
+        estaciones.shift();  /* remueve el primer elemento */
+        estaciones.unshift("invierno"); /*agrega elemento al principio*/
+
+        let miListaDeCompras = [["cereal", 3], ["yogurt", 6]];
+        console.log("Voy a comprar " + miListaDeCompras[0][1] + " cajas de " + miListaDeCompras[0][0] + ".");
+        console.log("Voy a comprar " + miListaDeCompras[1][1] + " potes de " + miListaDeCompras[1][0] + ".");
+
+
+        /* FUNCIONES */
+
+        function mostrarMensaje(){
+        	console.log("Hola Mundo!");
+        }
+        mostrarMensaje();
+
+        function sumar(a, b){
+        	var suma = a + b;                                                                        
+        	console.log("El resultado de " + a + " + " + b + " es: " + suma)
+        }
+
+        var x = 5;
+        var y = 3;
+
+        sumar(x, y);
+
+        /* Los ARGUMENTOS son los valores asignados a los PARAMETROS que recibe la funcion.
+        Las variables pueden enco ntrarse en el AMBITO GLOLBAL o AMBITO LOCAL */
+
+        function concatenarStrings(string1, string2, string3){
+        	console.log(string1 + " " + string2 + " " + string3);
+        }
+        concatenarStrings("Estoy", "aprendiendo", "a programar.");
+
+        /* RETORNAR valores; si no retornará UNDEFINED */
+        function sumar(a,b){
+        	return a + b;
+        }
+        console.log(sumar(5, 3));
+
+
+        function sumaSinRetornar(a, b){
+        	console.log(a + b);
+        }
+        console.log(sumaSinRetornar(5, 3)); /* undefined */
+
+        /* Asignar el valor retornado a una variable */
+        function sumar(a, b){
+        	return a + b;
+        }
+        var resultado = sumar(5, 3); //var resultado = 8
+        console.log(resultado);
+
+        /* PROXIMO EN LA FILA
+        queue en inglés. Agregar el numero al final del arreglo y luego eliminar el primero
+        */
+
+        function proximoEnLaFila(arr, elem){
+        	arr.push(elem); // agregar un elemento al final
+        	return arr.shift(); //remover primer elemento y retornarlo
+        }
+        var miArray = [1, 2, 3, 4, 5];
+        console.log("Antes: " + JSON.stringify(miArray)); //para presentar mejor en consola
+        console.log(proximoEnLaFila(miArray, 6));
+        console.log("Después: " + JSON.stringify(miArray));
+
+        ---------------------------------------------------------------------------------------
+        /* BOOLEANOS */
+        //NO se pueden comparar ARRAYS con operador de igualdad.
+
+        /* OPERADORES */
+        9 == "9" //true, se convierten al mismo tipo de datos
+        9 === "9" //false, compara el tipo de dato. operador de IGUALDAD ESTRICTA
+
+        9 != 9 //Not equal to, false.
+        ([1, 2, 3] != [1, 2, 3]) //objetos independientes en la memoria, true.
+
+        1 != "1" // false
+        1 !== "1" // true, operador de desigualdad estricta
+
+        "B" > "A" //true
+        "ACB" > "ABC" //true
+        "AB" > "A" //true
+        "Mundo" > "Hola" //true
+        "M" > "H" //true
+
+        var a = 7;
+        var b = 15;
+
+        a > b //false
+        b > a //true
+
+        /* CONDICIONALES */
+        function clasificaValor(valor){
+        	if (valor % 2 == 0) {
+        		console.log("El valor es divisible entre 2")
+        	}
+        	else if (valor % 3 == 0) {
+        		console.log("El valor es divisible entre 3")
+        	}
+        	else {
+        		console.log("El valor no es divisible entre las opciones")
+        	}
+        }
+
+        clasificaValor(4); //El valor es divisible entre 2
+        clasificaValor(5); //El valor no es divisible entre las opciones
+        clasificaValor(9); //El valor es divisible entre 3
+
+        function juegoDeGolf(par, golpes){
+        	if (golpes == 1) {
+        		return "Hole-in-one!";
+        	}
+        	else if (golpes <= par - 2){
+        		return "Eagle";
+        	}
+        	else if (golpes == par - 1){
+        		return "Birdie";
+        	}
+        	else if (golpes == par) {
+        		return "Par";
+        	}
+        	else if (golpes == par + 1) {
+        		return "Bogey";
+        	}
+        	else if (golpes == par + 2) {
+        		return "Double Bogey";
+        	}
+        	else if (golpes >= par + 3) {
+        		return "Go Home!"
+        	}
+        }
+        console.log(juegoDeGolf(7, 7)); //como retorna, puede ser asignado a una variable
+
+
+        //SENTENCIA SWITCH
+
+        function clasificarValor(valor) {
+        	var respuesta;
+        	switch (valor){
+        		case 1:
+        			respuesta = "alpha";
+        			break;
+        		case 2:
+        			respuesta = "beta";
+        			break;
+        		case 3:
+        			respuesta = "gamma";
+        			break;
+        		case 4:
+        			respuesta = "delta";
+        			break;
+        	}
+        	return respuesta; //return no es parte del switch
+        }
+        console.log(clasificarValor(1));
+        console.log(clasificarValor(2));
+        console.log(clasificarValor(3));
+        console.log(clasificarValor(4));
+
+        //SWITCH CON VALOR PREDETERMINADO (DEFAULT)
+
+        function precioVerduras(verdura) {
+        	var verdura;
+        	switch (verdura){
+        		case "alcachofa":
+        			console.log("Las alcachofas están a 3 x mil");
+        			break;
+                case "choclo":
+        			console.log("El choclito está a $200");
+        			break;
+                case "papas":
+        			console.log("Las papas están a $500 el kilo");
+        			break;
+        		default:
+        			verdura = "otra verdura"
+                    console.log("No me queda :( ")
+        			break;
+        	}
+        	return "¿Va a comprar " + verdura + " caserita?";
+        }
+        console.log(precioVerduras("zapallo"));
+
+        //SENTENCIA SWITCH MULTIPLES CASOS
+
+        function clasificarVolumen (valor){
+        	var volumen;
+        	switch (valor){
+        		case 1:
+        			volumen = "bajo";
+        			break;
+        		case 2:
+            case 3:
+        			volumen = "intermedio";
+              	break;
+            case 4:
+            case 5:
+            case 6:
+              volumen = "alto";
+                break;
+        		default:
+        			volumen = "Volumen no se puede cuantificar"
+        	}
+            return volumen;
+        }
+        console.log(clasificarVolumen(8));
+
+        //RETORNAR VALOR BOOLEANO
+
+        function esMenorQue(a, b) {
+            return a < b; //se puede resumir asi
+           /* if (a < b){
+                return true;
+            }
+            else {
+                return false;
+            }*/
+        }
+        console.log(esMenorQue(7, 8));
+
+        //PATRÓN DE RETORNO ANTICIPADO
+
+        function miFuncion(){
+            console.log("Hola")
+            return "Mundo"; //se dettiene la funcion
+            console.log("Adiós")
+
+        }
+        miFuncion();
+
+        function raizCuadrada(num){
+            if (num < 1){
+                return undefined; //si fuese negativo NaN (Not a Number)
+            }
+            return Math.sqrt(num);
+        }
+
+        console.log(raizCuadrada(25)); //5
+        console.log(raizCuadrada(-4)); //undefined
+
+
+        // BLACKJACK
+
+        var conteo = 0;
+
+        function contarCartas(carta){
+            var decision;
+
+            switch (carta){
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    conteo++; //NO ME ESTÁ FUNCIONANDO ESTO!!!!!!!!
+                    break;
+                //7, 8 ,9 no hay cambio en el conteo
+                case 10:
+                case "J":
+                case "Q":
+                case "K":
+                case "A":
+                    return conteo--;
+                    break;
+            }
+            if (conteo > 0){
+                decision = "Apostar";
+            }
+            else {
+                decision = "Esperar";
+            }
+             conteo + " " + decision;
+        }
+        console.log(contarCartas("2"));
+        console.log(contarCartas("3"));
+        console.log(contarCartas("4"));
+        console.log(contarCartas("5"));
+        console.log(contarCartas("7"));
+        console.log(contarCartas("K"));
+
+        -----------------------------------------------------------------------------------------
+
+        //CREAR OBJETOS
+
+        var miGato = {
+        	"nombre" : "Chalula", //pares propiedad: valor
+        	"color" : "blanco",
+        	"pelaje" : "corto",
+            "edad" : 7,
+            "tamano de la cola" : "corta"//una palabra se pueden omitir comillas, si hay espacios NO
+            //tamanoDeLaCola para usar notacion de corchetes
+        };
+
+        console.log(miGato.nombre); //acceder a un valor con la notación de punto
+        console.log(miGato["tamano de la cola"]); //notacion corchetes para propiedades con espacios
+
+        //Acceder a propiedades con VARIABLES
+
+        var misGatos = {
+        	1 : "Chalula",
+        	2 : "Pelusa"
+        };
+
+        var posicion = 2;
+
+
+        console.log(misGatos[posicion]); //solo con notacion de corchetes, punto necesit el nombre de la propiedad
+
+
+        //Actualizar propiedades
+        var miGato = {
+        	"nombre" : "Chalula",
+        	"nombresAlternativos" : ["Chala" , "Chalaila"],
+          "caracteristicas destacables" : ["bella" , "regalona", "asustadiza"],
+        	"color" : "blanco",
+        	"pelaje" : "corto",
+          "edad" : 7,
+          "tamano de la cola" : "corta"
+        };
+
+        miGato.color = "gris";
+        console.log(miGato.color);
+
+
+        miGato.nombresAlternativos.push("Chalita");
+        console.log(miGato.nombresAlternativos);
+
+
+        miGato.nombresAlternativos = ["Cha-cha-chapala"];
+        console.log(miGato.nombresAlternativos);
+
+        miGato["caracteristicas destacables"].pop();
+        console.log(miGato["caracteristicas destacables"]);
+
+        //Agregar Propiedades
+        var curso = {
+            "titulo" : "Aprende JS desde cero",
+            "idioma" : "español",
+            "duracion" : 30
+        };
+
+        curso.vistas = 34500; //igual a curso["vistas"]
+        console.log(curso.vistas);
+
+        //Eliminar propiedades
+
+        var curso = {
+            "titulo" : "Aprende JS desde cero",
+            "idioma" : "español",
+            "duracion" : 30
+        };
+        console.log(curso);
+        delete curso.duracion;
+        console.log(curso);
+        console.log(curso.duracion); //undefined
+
+        //Objetos para Búsquedas
+
+        function buscarElementoQuimico(simbolo){
+            var elementoQuimico = "";
+
+            switch (simbolo) { //se puede escribir como objeto de forma mas concisa
+                case "Al" :
+                  elementoQuimico = "Aluminio";
+                    break;
+                case "S" :
+                  elementoQuimico = "Azufre";
+                    break;
+                case "Cl" :
+                  elementoQuimico = "Cloro";
+                    break;
+                case "He" :
+                  elementoQuimico = "Helio";
+                    break;
+                case "B" :
+                  elementoQuimico = "Boro";
+                    break;
+            }
+            return elementoQuimico;
+        }
+
+        console.log(buscarElementoQuimico("Cl"));
+
+        //Asi!
+        function buscarElementoQuimico(simbolo) {
+                var simbolosQuimicos = {
+                  Al: "Aluminio",
+                  S: "Azufre",
+                  Cl: "Cloro",
+                  He: "Helio",
+                  B: "Boro",
+                };
+                return simbolosQuimicos[simbolo];
+              }
+
+              console.log(buscarElementoQuimico("S"));
+
+
+      //VERIFICAR PROPIEDADES ( hasOwnProperty )
+
+      var miCuaderno = {
+      		"color" : "verde",
+      		"categoria" : 3,
+      		"precio" : 4.56
+      };
+
+      console.log(miCuaderno.hasOwnProperty("cosa")); //false
+
+      function verificarPropiedad (obj, propiedad) {
+          if (obj.hasOwnProperty(propiedad)){
+              return "Propiedad: " + obj[propiedad];
+          } else{
+             return "El objeto no tiene esta propiedad"
+          }
+      }
+      console.log(verificarPropiedad(miCuaderno, "color")); //Propiedad: verde
+      console.log(verificarPropiedad(miCuaderno, "hojas")); //El objeto no tiene esta propiedad
+
+
+
+      //OBJETOS COMPLEJOS
+      //Distintos tipos de datos, por ej arreglo de objetos
+
+      var ordenesDePizzas = [
+          {
+              "tipo" : "margarita",
+              "tamaño" : "individual",
+              "precio" : 5.67,
+              "toppings" : [
+                  "extra queso",
+                  "champiñones",
+                  "piña"
+              ],
+              "paraLlevar" : true
+          },
+          {
+              "tipo" : "cuatro quesos",
+              "tamaño" : "familiar",
+              "precio" : 18.34,
+              "toppings" : [
+                  "extra queso",
+                  "pimenton"
+              ],
+              "paraLlevar" : false
+          },
+          {
+              "tipo" : "napolitana",
+              "tamaño" : "individual",
+              "precio" : 5.67,
+              "toppings" : [],
+              "paraLlevar" : true
+          }
+      ];
+
+      console.log(JSON.stringify(ordenesDePizzas[0].tipo)); //"margarita"
+      console.log(JSON.stringify(ordenesDePizzas[0]["tipo"])); //"margarita"
+
+      console.log(JSON.stringify(ordenesDePizzas[1].toppings)); //["extra queso","pimenton"]
+
+      ordenesDePizzas[2].toppings.push("aceitunas verdes");
+      console.log(ordenesDePizzas[2].toppings); //['aceitunas verdes']
+      console.log(ordenesDePizzas[2]); //{tipo: 'napolitana', tamaño: 'individual', precio: 5.67, toppings: 'aceitunas verdes', paraLlevar: true}
+
+
+      //OBJETOS ANIDADOS
+
+      var miReceta = {
+          "descripción" : "mi postre favorito",
+          "costo" : 15.6,
+          "ingredientes" : {
+              "masa" : {
+                  "harina": "100 grs",
+                  "sal": "1 cucharadita",
+                  "agua" : "1 taza"
+              },
+              "cobertura" : {
+                  "azucar" : "120 grs",
+                  "chocolate" : "4 cucharadas",
+                  "mantequilla" : "200 grs"
+              }
+          }
+      };
+
+      console.log(miReceta.ingredientes.masa); //"harina": "100 grs", "sal": "1 cucharadita", "agua" : "1 taza"
+      console.log(miReceta.ingredientes.masa.sal); // 1 cucharadita
+      console.log(miReceta.ingredientes.masa["sal"]); // 1 cucharadita
+      console.log(miReceta.ingredientes["masa"].sal); // 1 cucharadita
+
+
+      // ARREGLOS ANIDADOS
+
+      var misPlantas = [
+          {
+              tipo : "flores",
+              lista : [ // arreglo escrito en forma vertical
+                  "rosas",
+                  "tulipanes",
+                  "dientes de león"
+              ]
+          },
+          {
+              tipo : "árbolitos",
+              lista : [
+                  "abeto",
+                  "pino",
+                  "abedul"
+              ]
+          }
+      ];
+
+      var primeraFlor = misPlantas[0].lista[0]; //rosas
+      console.log(primeraFlor);
+
+      var segundoArbol = misPlantas[1].lista[1]; //pino
+      console.log(segundoArbol);
+
+
+
+
+      // MINIPROYECTO: COLECCION DE DISCOS
+
+      var coleccionDeDiscos = {
+          7853: {
+              tituloDelAlbum : "Bee Gees Greatest",
+              artista : "Bee Gees",
+              canciones : ["Stayin Alive"]
+          },
+          5439: {
+              tituloDelAlbum : "ABBA Gold"
+          }
+      };
+
+      // si "valor" es cadena vacia, elimina la propiedad del album
+      // si "propiedad" es igual a "canciones" pero no tiene la propiedad "canciones", crea arreglo vacío y agregar "valor" a ese arreglo
+      // si "propiedad" es igual a "canciones" y "valor" NO es una cadena vacia, agregar "valor" al final de array de canciones del album
+      // si "valor" NO es una cadena vacia y "propiedad" NO es igual a "canciones", asignar "valor". Si no exiswte la propiedad hay que crearla.
+
+
+       function actualizarDiscos(discos, id, propiedad, valor) {
+          if (valor == ""){
+             delete discos[id][propiedad];
+          }
+          else if (propiedad === "canciones") {
+              discos[id][propiedad] = discos[id][propiedad] || []; //Si existe se mantiene intacto. El arreglo vacio es el valor de respaldo si la anterior cláusula es undefined,
+              discos[id][propiedad].push(valor);
+
+
+          } else {
+              discos[id][propiedad] = valor;
+          }
+       }
+
+      console.log(coleccionDeDiscos[7853].tituloDelAlbum); //Bee Gees Greatest
+
+      actualizarDiscos(coleccionDeDiscos, 7853, "tituloDelAlbum", ""); //probando primera cláusula, borra propiedad
+
+      console.log(coleccionDeDiscos[7853].tituloDelAlbum); //undefined
+
+
+      console.log(coleccionDeDiscos[5439].canciones); //undefined
+
+      actualizarDiscos(coleccionDeDiscos, 5439, "canciones", "Mamma Mia"); //crea la propiedad y valor
+
+      console.log(coleccionDeDiscos[5439].canciones); //["Mamma Mia"]
+
+
+
+
+      ----------------------------------------------------------------------------------------------
+
+
+      /* -------------------------    CICLO WHILE
+
+    Se utiliza cuando no sabemos el número específico de iteraciones
+    */
+
+    var miArreglo = [];
+    var i = 0;
+
+    while (i <= 8) {
+        console.log("Hola Mundo");
+        miArreglo.push(i);
+        i++;
+    }
+    console.log(miArreglo); //[0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+
+    var numeros = [2, 3, 4, 5, 6, 7, 24];
+
+    while (numeros.length > 4) {
+    	numeros.pop();
+    }
+    console.log(numeros); //[2, 3, 4, 5]
+    /* Actualizar la variable para no crear ciclos infinitos */
+
+
+
+    /* ------------------ CICLO O BUCLE "FOR"
+
+     numero de iteraciones conocidas; actualiza la variable automáticamente 
+     */
+
+    var miArreglo = [];
+    /* inicializar la variable del ciclo "loop variable";
+    condicion para continuar en el ciclo;
+    como actualizar la variable en cada iteración */
+    for (var i = 0; i < 10; i++) {
+        miArreglo.push(i);
+    }
+     console.log(miArreglo); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    for (var i = 0; i < 10; i += 2) {
+        miArreglo.push(i);
+    }
+     console.log(miArreglo); //[0, 2, 4, 6, 8]
+
+
+
+     //       Ciclo FOR numeros impares
+
+     var miArreglo = [];
+
+    for (var i = 1; i <20; i += 2){
+        miArreglo.push(i);
+    }
+    console.log(miArreglo); //[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+
+
+    //      agregar pares 2 a 26 a un Array
+
+    var miArreglo = [];
+
+    for (var i = 2; i <= 26; i += 2) {
+    	miArreglo.push(i);
+    }
+    console.log(miArreglo); //[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26]
+
+
+
+    //      Ciclo FOR contar hacia atrás
+
+    for (var i = 15; i >= 10; i--){ //i -= 2 resulta en 15 13 11
+        console.log(i);
+    }
+    //15 14 13 12 11 10
+
+
+    //      Iterar sobre un Array con un ciclo FOR
+    //obtener cada elemento del arreglo y utilizarlo
+
+    var miArreglo = [4, 6, 8, 2];
+    var total = 0;
+    //i será usado como indice; por eso usar < y no <=
+    for (var i = 0; i < miArreglo.length; i++) {
+        console.log("Iteración: " + i);   //iteracion: 0 - 1 - 2 - 3
+        console.log(i); //0 - 1 - 2 - 3
+        console.log(miArreglo[i]);//4 - 6 - 8 - 2
+        total += miArreglo[i];
+    }
+
+    console.log(total); //20
+
+
+
+    //    utilizarlo como indice
+
+    var lenguajesDeProgramacion = ["JavaScript", "Python", "Java", "C++"];
+
+    for (var i = 0; i < lenguajesDeProgramacion.length; i++) {
+        console.log(lenguajesDeProgramacion[i].toUpperCase());
+    }
+    //JAVASCRIPT PYTHON JAVA C++
+
+
+
+
+    //      Ciclo FOR dentro de una funcion
+
+    function contarNumeroPares(arreglo){
+    	var total = 0;
+
+    	for (var i = 0; i < arreglo.length; i++) {
+    		if (arreglo[i] % 2 == 0) {
+    			total++;
+    		}
+    	}
+    	return total;
+    }
+    console.log(contarNumeroPares([5, 3, 1, 2, 4, 8])); //3
+
+
+    //-------------- Ciclos FOR ANIDADOS
+
+    //utiles para procesar estructuras de datos multidimensionales
+
+    var miArreglo = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+    for (var i = 0; i < miArreglo.length; i++) {      // console.log(miArreglo[i]); genera [1, 2, 3]   [4, 5, 6]  [7, 8, 9]
+        console.log("> Nueva iteración: ");           //iteración del ciclo externo
+        var arregloAnidado = miArreglo[i];            // Arreglo
+        console.log("Arreglo: " + arregloAnidado);
+        for (var j = 0; j < arregloAnidado.length; j++) {
+            console.log(">>> Ciclo anidado:  ");
+        console.log("Elemento: ")
+            console.log(arregloAnidado[j]);                   // Elemento genera 1 2 3 4 5 6 7 8 9
+        }
+    }
+
+
+    /*
+    > Nueva iteración
+    Arreglo: 1, 2, 3
+    >>> Ciclo anidado
+    Elemento : 1
+    1
+    >>> Ciclo anidado
+    Elemento : 2
+    2
+    >>> Ciclo anidado
+    Elemento : 3
+    3
+    > Nueva iteración
+    Arreglo: 4, 5, 6
+    >>> Ciclo anidado
+    Elemento : 4
+    4
+    >>> Ciclo anidado
+    Elemento : 5
+    5
+    >>> Ciclo anidado
+    Elemento : 6
+    6
+    */
+
+
+
+
+
+    /*    ------ CICLOS DO... WHILE 
+
+    (hacer tal cosa... mientras una condicion es verdadera)
+*/
+    var x;
+
+    x = 5;
+
+    while (x < 10) {
+        console.log(x);
+        x++;
+    }
+    //5 6 7 8 9
+    //Si x >= 10º1                                                                                                                                                  ; no se va a ejecutar
+
+    /* Con el ciclo do while se ejecuta al menos una vez y luego evalúa la condición.
+    Puede ser utilizada cuando se le pide un valor al usuario y luego ejecutar solo si el valor ingresado es válido.
+    En el ciclo while si la condicion no se cumple no se ejecuta ninguna sola vez.
+    */
+    var x;
+
+    x = 16;
+
+    do {
+        console.log(x);
+        x++; //17
+    } while (x < 10);
+    //16 y el ciclo no continua
+
+
+    //    EJERCICIO BUSQUEDA DE PERFIL
+
+    var contactos = [
+    {
+        "nombre" : "Leonardo",
+        "apellido" : "Cisternas",
+        "numero" : "12345",
+        "gustos" : ["Jugar PlayStation", "Comer papas fritas", "Andar en bici"]
+    },
+    {
+        "nombre" : "Bernardita",
+        "apellido" : "Poblete",
+        "numero" : "67890",
+        "gustos" : ["Programar", "Comer alcachofas", "Hacer ejercicio"]
+    },
+    {
+        "nombre" : "Chalula",
+        "apellido" : "Chalulein",
+        "numero" : "24680",
+        "gustos" : ["Dormir", "Comer atún", "Practicar Parkour"]
+    }
+    ];
+
+    function buscarPerfil (nombre, propiedad){                                                                                                  
+        for (var i = 0; i < contactos.length; i++){
+            if (contactos[i].nombre === nombre){
+                return contactos[i][propiedad] || "La propiedad no existe."; //valor de respaldo ante undefined
+            }
+        }
+        return "El nombre no está en la lista de contactos";
+    }
+
+    console.log(buscarPerfil("Leonardo", "gustos"));
+    console.log(buscarPerfil("Bernardita", "apellido"));
+    console.log(buscarPerfil("Chalula", "numero"));
+    console.log(buscarPerfil("Leonardo", "direccion")); //La propiedad no existe (undefined)
+    console.log(buscarPerfil("Pelusa", "gustos")); //El nombre no está en la lista de contactos.
+
+
+
+    /*    NUMEROS ALEATORIOS
+    .Math() es un objeto con funciones matematicas básicas y constantes
+    */
+
+    function generarfraccionAleatoria(){
+        return Math.random();   //entre 0 y 1 sin incluir 1 [0, 1)]
+    }
+
+    console.log(generarfraccionAleatoria()); //0.8799168604626537
+    console.log(Math.random());
+    var numeroAleatorio = Math.random();
+    console.log(numeroAleatorio);
+
+
+    /*    NUMEROS ENTEROS ALEATORIOS
+    Math.floor() "elimina" los decimales
+    */
+
+    var numeroAleatorioEntre0y19 = Math.floor(Math.random() * 20); //siempre sará >= 19,99999999
+    console.log(numeroAleatorioEntre0y19); // en este caso 19, numero entero mayor.
+
+    function generarEnteroAleatorio(limiteSuperior){
+        //generará un entero aleatorio entre 0 y el limite superior sin incluirlo
+        return Math.floor(Math.random() * limiteSuperior);
+    }
+
+    for (var i = 0; i < 15; i++){
+        /*genera nummeros enteros aleatorios entre 0 y 10 sin incluirlo
+         en un ciclo que se repite 15 veces
+         */
+        console.log(generarEnteroAleatorio(10));
+
+    }
+
+    /*    NUMEROS ENTEROS ALEATORIOS EN UN RANGO
+    */
+
+    function rangoAleatorio(limiteInferior, limiteSuperior){
+        return Math.floor(Math.random() * (limiteSuperior - limiteInferior + 1) + limiteInferior);
+    }
+    for (var i = 0; i < 15; i++){
+        console.log(rangoAleatorio(3, 8)); //resultado incluye los limites
+    }
+
+
+
+    /*          FUNCION ParseInt()
+    convertir (procesar) string en un entero
+    */
+
+
+    console.log(parseInt("5")); //5
+    console.log(parseInt("6.7")); //6
+    console.log(parseInt("abc")); //NaN Not a Number
+
+    var a = "5";
+    var b = "7"
+
+    console.log(a + b); // 57
+
+    var a = parseInt("5");
+    var b = parseInt("7");
+
+    console.log(a + b); // 12
+
+
+
+    /*          FUNCION ParseInt() CON UNA BASE
+
+    Convertir una cadena de caracteres en otro sistema numérico
+    al sistema decimal como un entero
+    */
+
+    console.log(parseInt("110111", 2)); // 55 : es un número binario, por tanto base 2
+    console.log(parseInt(110111, 2));  //también es 55
+    //Los numeros binarios son los únicos que permiten escritura con o sin comillas.
+
+    console.log(parseInt("3E0A", 16)); // Sistema hexadecimal 15882, tiene que ir con comillas
+
+
+
+
+    /*          OPERADOR CONDICIONAL (TERNARIO)
+    compactar un condicional en una sola linea
+    */
+
+    function retornarMinimo (x, y) {
+        if (x < y){
+            return x;
+        }
+        else{
+            return y;
+        }
+    }
+
+    //ES LO MISMO QUE EL TERNARIO:
+     //Si es true retorna x: si es false retorna y
+
+    function retornarMinimo (x, y) {
+        return x < y ? x : y;
+    }
+    console.log(retornarMinimo(4, 7)); // 4
+    console.log(retornarMinimo(8, 10)); // 4
+
+
+    var a = 5;
+    var b = 9;
+
+    console.log(a > b ? a + 2 : b * 3);  //27
+
+
+    /*          MULTIPLES OPERADORES CONDICIONALES O TERNARIOS
+          UNO DENTRO DE OTRO
+          */
+
+    function compararNumeros(a, b){
+      if (a == b) {
+            return "a y b son iguales!" ;
+        } else if (a > b){
+            return " a es mayor que b" ;
+        } else {
+            return "b es mayor que a";
+        }
+    }
+
+    function compararNumeros(a, b) {
+        return a == b ? "a y b son iguales!"
+              : a > b ? "a es mayor que b"
+              : "b es mayor que a" ;
+          }
+
+    console.log(compararNumeros(4, 4)); // a y b son iguales!
+    console.log(compararNumeros(4, 3)); //a es mayor que b
+    console.log(compararNumeros(4, 5)); //b es mayor que a
+
+
+
+      /*         ---------------------   VAR VS LET       
+
+			LET se puede utilizar solo 1 vez, se puede actualizar 
+			la variable sin usar let 
+			*/
+
+		
+let pokemon = "eevee";
+pokemon = "pikachu";
+
+console.log(pokemon); //pikachu
+
+/* LET limita aún más el ambito de la variable.
+con var podian tener ambito global y local.
+con let las variables pertenecen a un bloque de código.
+*/
+
+for (var i = 0; i < 3; i++) {
+	console.log(i); //0 1 2 
+}
+
+console.log("Variable: " + i); // Variable: 3    
+// porque i es una variable global
+// se puede usar fuera del ciclo. 
+// fue incrementada antes de salir del ciclo
+
+
+for (let i = 0; i < 3; i++) {
+	console.log(i); // 0 1 2
+}
+
+console.log("Variable con let: " + i); // ReferenceError: i is not defined
+// la variable i declarada con LET solo vive dentro del bloque de código del ciclo for. 
+
+
+
+/* ----------- DEMO VAR VS LET */
+
+var mostrarColor = true;
+
+if (mostrarColor) {
+	let color = "verde"; //si fuese var color, fuera del condicional podría ser utilizado (verde)
+	console.log("Mi color favorito es: " + color);
+}
+// Mi color favorito es: verde
+console.log(color); //ReferenceErrror: color is not defined
+
+
+
+/* --------------------------------   CONST 
+*/
+
+const miConstante = 35;
+console.log(miConstante);
+
+miConstante = 15; //TypeError: "miConstante" is read-only, no se puede reasignar.
+
+//otra caracteristica de CONST:
+const miConstante;
+miConstante = 35;
+
+console.log(MiConstante); // SyntaxError: unknown: CONST declaratios require an inicialization value
+
+//Por convencion se escriben con mayusculas y guion bajo para separar palabras
+// const MI_CONSTANTE
+
+function calcularAreaCirculo(radio) {
+  const PI = 3.14;
+
+  if (radio < 0) {
+    return undefined;
+  }
+
+  return PI * (radio ** 2); //** es elevar una base a un exponente
+}
+
+console.log(calcularAreaCirculo(10)); // 314
+
+
+
+/* ----------   Mutar Array declarado con CONST 
+No se le puede asignar un nuevo valor a la variable, 
+pero si puede ser cambiado-reasignado.
+*/
+
+const MI_ARREGLO = [1, 2, 3, 4];
+
+MI_ARREGLO = [5, 6, 7, 8]; //Error
+
+MI_ARREGLO[0] = 5;
+MI_ARREGLO[1] = 6;
+MI_ARREGLO[2] = 7;
+MI_ARREGLO[3] = 8;
+
+console.log(MI_ARREGLO); // [5, 6, 7 ,8]
+
+
+/* ----------   Crear un Objeto INMUTABLE           Object.freeze();
+*/
+
+let colores = {
+  "verde" : "#10e04b",
+  "azul" : "#1b50e0",
+  "negro" : "#000000",
+  "blanco" : "#ffffff"
+};
+
+Object.freeze(colores);
+
+colores.amarillo = "fff200";
+console.log(colores); //TypeError: cannot add property amarillo, object is not extensible
+colores.verde = "#345sg5"; // TypeError: cannot assign to read only property "verde" of object "#<Object>"
+delete colores.verde; // TypeError: cannot delete property "verde" of #<Object>
+
+
+
+
+/* --------------------------------   FUNCIONES FLECHA
+*/
+
+const FECHA = function() {   // función anónima
+  return new Date();
+};
+
+//Se puede definir como función flecha asi:
+const FECHA = () => new Date();
+
+
+
+/* ----   FUNCIONES FLECHA con parámetros
+*/
+
+const sumarTres = (x) => x + 3;
+console.log(sumarTres(1)); //4
+
+
+const concatenarArreglos = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+console.log(concatenarArreglos([1, 2], [3, 4, 5])); //[1, 2, 3, 4, 5]
+
+// se puede escribir: (solo si tienen una linea, sino hay que conservar las llaves)
+const concatenarArreglos = (arr1, arr2) => arr1.concat(arr2);
+console.log(concatenarArreglos([1, 2], [3, 4, 5])); //[1, 2, 3, 4, 5]
+
+const sumar = (a, b) => { // eliminar la palabra function y agregar flecha =>
+    let num = 6; //tiene 2 lineas por tanto se mantienen las llaves
+    return a + b + num;
+}
+console.log(sumar(1, 1)); // 8
+
+
+
+/* ----   Valores por Defecto para parámetros
+*/
+
+const incrementar = (num, valor = 1) => num + valor;
+
+console.log(incrementar(5)); // 6 se utiliza el valor por defecto
+console.log(incrementar(5, 2)); // 7
+
+
+
+/* -------------   OPERADOR REST      ...args
+
+Permite pasar cualquier numero de argumentos a una funcion 
+y que estos argumentos se agrupen como un arreglo
+*/
+
+function miFuncion(...args) {
+  console.log(args);
+  console.log(args.length); //se puede iterar sobre el array
+};
+
+miFuncion("argumento", 2, 3, [0, 1]); // devuelve el ARRAY ['argumento', 2, 3, [0, 1]] y length: 4
+
+
+// extender el numero de argumentos 
+// .reduce()suma los elementos del array y retorna el resultado
+
+const sumar = (x, y, z) => {
+  const args = [x, y, z];
+  return args.reduce((a,  b) => a + b, 0); // pasamos una fx flecha como argumento
+};
+
+//se cambia por:
+const sumar = (...args) => {
+  return args.reduce((a,  b) => a + b, 0); 
+};
+
+
+/* -------------   OPERADOR SPREAD      
+Lo contrario a ...rest
+Toma un array y lo descompone en sus elementos individuales 
+para que la funcion pueda recibirlos y asignarlos a sus parametros correspondientes.
+*/
+
+const numeros = [1, 2, 3];
+
+function sumar(x, y, z) {
+  return x + y + z;
+}
+sumar(numeros[0], numeros[1], numeros[2]); //6
+//se puede utilizar 
+sumar(...numeros); //6
+
+
+
+
+/* -------------   SINTAXIS DE DESESTRUCTURACIÓN     
+const {nombreDeLas, propiedades} = nombreDelObjeto;
+*/
+
+const usuario = {
+  nombre: "Gino Smith",
+  edad: 34
+};
+
+const nombre = usuario.nombre;
+const edad = usuario.edad;
+
+//CON ES6 =    const {nombreDeLas, propiedades} = nombreDelObjeto;
+const {nombre, edad} = usuario;
+
+
+
+var coordenadas = {
+  x: 4,
+  y: 6,
+  z: 12
+};
+
+/* EN VEZ DE OBTENER EL VALOR ASI:
+var x = coordenadas.x;
+var y = coordenadas.y;
+var z = coordenadas.z;
+SE PUEDE ESCRIBIR ASI
+*/
+const {x, y, z} = coordenadas;
+
+console.log(x); //4
+console.log(y); //6
+console.log(z); //12
+
+
+
+/* -------------   SINTAXIS DE DESESTRUCTURACIÓN: OBJETOS ANIDADOS     
+
+*/
+
+const usuario = {
+  johnDoe: {
+    edad: 27,
+    correo: "johndoe@freecodecamp.com"
+  }
+};
+//podemos asignarlo a variables para trabajar con ellas
+
+const {johnDoe: {edad, correo}} = usuario;
+// nombre propiedad {propiedades que queremos signar a las variables}
+console.log(edad); // 27
+console.log(correo); //johndoe@freecodecamp.com
+
+//SE PUEDEN CAMBIAR LOS NOMBRES DE LAS PROPIEDADES
+const {johnDoe: {edad: edadDelUsuario, correo: correoDelUsuario}} = usuario;
+console.log(edad); // ERROR Edad is not defined, ahora la variable es edadDelUsuario
+console.log(correo); //ERROR
+console.log(edadDelUsuario);
+console.log(correoDelUsuario);
+
+
+const PRONOSTICO_LOCAL = {
+  "ayer": {
+    minima: 8,
+    maxima: 26
+  },
+  "hoy": {
+    minima: 9,
+    maxima: 31
+  },
+  "mañana": {
+    minima: 10,
+    maxima: 32
+  }
+};
+
+const minimaHoy = PRONOSTICO_LOCAL.hoy.minima;
+const maximaHoy = PRONOSTICO_LOCAL.hoy.maxima;
+
+console.log(minimaHoy, maximaHoy); // 9 31 separados por un espacio
+
+
+//CON SINTAXIS DE DESESTRUCTURACION:
+const PRONOSTICO_LOCAL = {
+  "ayer": {
+    minima: 8,
+    maxima: 26
+  },
+  "hoy": {
+    minima: 9,
+    maxima: 31
+  },
+  "mañana": {
+    minima: 10,
+    maxima: 32
+  }
+};
+
+const {hoy: {minima: minimaHoy, maxima: maximaHoy}} = PRONOSTICO_LOCAL;
+console.log(minimaHoy, maximaHoy); // 9 31 minimaHoy y maximaHoy son los unicos nombres para estas variables (sus nombres nuevos). 
+//El nombre de la propiedad (mima, maxima) no es una variable (is not defined).
+
+
+
+
+/* -------------   SINTAXIS DE DESESTRUCTURACIÓN: ARREGLOS   
+
+*/
+
+var a;
+var b;
+var c;
+
+[a, b, c] = [1, 2, 3];
+
+console.log(a); // 1 
+console.log(b); // 2
+console.log(c); // 3
+
+//Si hay mas valores
+[a, b] = [1, 2, 3, 4, 5, 6]; //se asignan en orden
+
+console.log(a); // 1 
+console.log(b); // 2
+
+
+//SALTAR POSICIONES
+
+[a, b,,, c] = [1, 2, 3, 4, 5, 6]; // depende el numero de comas, salta la posición
+
+console.log(a); // 1 
+console.log(b); // 2
+console.log(c); // 5 !!!!!
+
+
+//INTERCAMBIAR LOS VALORES DE 2 VARIABLES
+
+var a = 8;
+var b = 6;
+
+
+[b, a] = [a, b]; // sintaxis de destructuracion para intercambiar valor en 1 sola linea
+
+console.log(a); // 6
+console.log(b); // 8
+
+
+
+
+/* -------------   SINTAXIS DE DESESTRUCTURACIÓN CON EL OPERADOR REST 
+Rest: reasignar arreglo en varias variables
+*/
+
+var a;
+var b;
+var arr;
+
+[a, b, ...arr ] = [1, 2, 3, 4, 5, 6, 7]; //...nombreDeLaVariable
+
+console.log(a); // 1
+console.log(b); //3
+console.log(arr); //[3, 4, 5, 6, 7]
+
+
+//Remover elementos
+
+const arregloInicial = [1, 2, 3, 4, 5, 6, 7, 8];
+
+function removerTresPrimerosElementos(arreglo) {
+  // var nuevoArreglo; no es necesario declararla 
+  const [ , , , ...nuevoArreglo] = arreglo;
+  return nuevoArreglo;
+}
+ const arregloFinal = removerTresPrimerosElementos(arregloInicial);
+ console.log(arregloFinal); // [4, 5, 6, 7, 8]
+
+
+
+
+
+/* -------------   SINTAXIS DE DESESTRUCTURACIÓN:  Pasar OBJETO como ARGUMENTO
+
+*/
+
+var nuevoPerfilCliente = {
+  nombre: "Leito",
+  edad: 34,
+  nacionalidad: "chileno",
+  ubicacion: "Santiago de Chile"
+};
+
+//descomponerlo y pasarlo como argumento
+const actualizarPerfil = (informacionDePerfil) => {
+  const {nombre, edad, nacionalidad, ubicacion} = informacionDePerfil;
+  console.log(nombre);
+  console.log(edad);
+  console.log(nacionalidad);
+  console.log(ubicacion);
+};
+
+actualizarPerfil(nuevoPerfilCliente); // Leito 34 chileno Santiago de Chile
+
+
+//----
+
+var nuevoPerfilCliente = {
+  nombre: "Leito",
+  edad: 34,
+  nacionalidad: "chileno",
+  ubicacion: "Santiago de Chile"
+};
+
+const actualizarPerfil = (informacionDePerfil) => {
+  console.log(informacionDePerfil);
+};
+
+actualizarPerfil(nuevoPerfilCliente); // Devuelve el objeto completo 
+//{nombre: 'Leito', edad: 34, nacionalidad: 'chileno', ubicacion: 'Santiago de Chile'}
+
+var nuevoPerfilCliente = {
+  nombre: "Leito",
+  edad: 34,
+  nacionalidad: "chileno",
+  ubicacion: "Santiago de Chile"
+};
+
+
+const actualizarPerfil = ({nombre, edad, nacionalidad, ubicacion}) => {  //sintaxis de destructuración en los argumentos, 
+  //se pueden seleccionar propiedades especificas del objeto que pasamos como parámetro.
+  console.log(nombre);
+  console.log(edad);
+  console.log(nacionalidad);
+  console.log(ubicacion);
+};
+
+actualizarPerfil(nuevoPerfilCliente); // // Leito 34 chileno Santiago de Chile
+
+
+const estadisticas = {
+  max: 56.78,
+  desviacionEstandar: 4.34,
+  mediana: 34.54,
+  moda: 23.87,
+  min: -0.75,
+  promedio: 35.85
+};
+
+const mitad = (estadist) => (e.max + e.min) / 2.0;
+//se puede escribir: (identificar las propiedades para trabajar y asignarlas)
+const mitad = ({max, min}) => (max + min) / 2.0;
+console.log(mitad(estadisticas)); //28.015
+
+
+
+
+/* -------------   PLANTILLAS LITERALES O PLANTILLAS DE CADENAS
+
+
+Son strings especiales que permiten crear cadenas con varias lineas 
+y reemplazar los valores de las variables que necesitemos facilmente en una cadena.
+Caracteristicas:
+- se usa el acento invertido (backtick) ` en lugar de comillas.
+- pueden contener comillas simples y dobles.
+- las lineas se preservan como se escribe en el codigo.
+- para reemplazar una variable se escribe ${variable}.
+- dentro de ${} tambien se pueden escribir expresiones.
+*/
+
+var nombre = "Nora";
+var numero = 6;
+
+console.log(`Mi nombre es ${nombre} y tengo ${numero} años`);
+
+
+var miArreglo = [1, 2, 3, 4]; // Mi nombre es Nora y tengo 6 años
+console.log(`El arreglo ${miArreglo} tiene ${numero - 2} elementos `); //El arreglo 1,2,3,4 tiene 4 elementos
+
+console.log(`El arreglo ${JSON.stringify(miArreglo)} se aprecia mejor en la consola con JSON `) 
+// El arreglo [1,2,3,4] se aprecia mejor en la consola con JSON
+
+
+//Reemplazar por el valor de las propiedades de un objeto.
+
+var persona = {
+    nombre: "Berny Poblete",
+    edad: 31,
+};
+
+const SALUDO = `¡Hola! Mi nombre es ${persona.nombre} y tengo ${persona.edad} años.`;
+
+console.log(SALUDO); //¡Hola! Mi nombre es Berny Poblete y tengo 31 años.
+
+
+
+
+
+
+
+
+/* -------------   CREAR OBJETOS DE FORMA CONCISA
+*/
+
+const crearPersona = (nombre, edad, idioma) => {
+  //retornar un objeto
+  return{
+    nombre: nombre,
+    edad: edad,
+    idioma: idioma
+
+  };
+};
+
+console.log(crearPersona("Leito", 34, "español")); //{nombre: 'Leito', edad: 34, idioma: 'español'}
+
+//Se puede reemplazar en una linea asi:
+const crearPersona = (nombre, edad, idioma) => ({nombre, edad, idioma});
+
+console.log(crearPersona("Leito", 34, "español")); //{nombre: 'Leito', edad: 34, idioma: 'español'}
+
+
+
+
+
+
+
+/* ----------------------------  METODOS
+
+Declarar funciones dentro de los objetos
+SI EL VALOR DE UNA PROPIEDAD ES UNA FUNCIÓN, SE DENOMINA "MÉTODO"
+*/
+
+const persona = {
+  nombre: "Leonardo",
+  presentarse: function() {
+    return `Hola, mi nombre es ${this.nombre}.`;
+  }
+    //this es el objeto con el que se está trabajando
+    //Simplificar la función: quitar los : y la palabra function. 
+    presentarse()
+    {return `Hola, mi nombre es ${this.nombre}`;
+  }
+  
+};
+
+console.log(JSON.stringify(persona)); //{"nombre": "Leonardo"}
+
+console.log(persona.presentarse()); //Hola, mi nombre es Leonardo
+
+
+
+
+
+/* ----------------------------  DEFINIR UNA CLASE
+Permite crear muchos objetos con la misma estructura.
+Convención: nombres de las clases utilizar UpperCamelCase.
+Es básicamente una forma distinta de escribir objetos y mas concisa.
+No tiene todas las capacidades de clases de otros lenguajes de programación.
+Utilidad: Generar una plantilla general de un tipo de objeto <3
+*/
+
+
+class TransbordadorEspacial {
+   constructor(planeta) {
+     //asignar el valor del parámetro a la propiedad planeta del objeto que se está creando.
+     this.planeta = planeta;
+   }
+ }
+
+var zeus = new TransbordadorEspacial("Júpiter");
+console.log(zeus.planeta); //Júpiter
+
+var apolo = new TransbordadorEspacial("Marte");
+console.log(apolo.planeta); //Marte
+
+
+class Mascota {
+  constructor(nombre, color) {
+    this.nombre = nombre;
+    this.color = color;
+    //propiedades a las que podemos acceder, actualizar, eliminar, trabajar en general!!
+    //Podemos reutilizar este código
+  } 
+}
+
+
+var miMascota = new Mascota("Chalula", "Blanco"); 
+ console.log(miMascota); //Mascota {nombre: 'Chalula', color: 'Blanco'}
+
+var otraMascota = new Mascota("Pelusa", "Negra con blanco");
+console.log(otraMascota); //Mascota {nombre: 'Pelusa', color: 'Negra con blanco'}
+
+
+
+/* ----------------------------  GETTERS Y SETTERS 
+
+Expandir el concepto de OBJETO
+Los objetos pueden tener funciones asociadas a esos objetos.
+Tambien podemos definir funciones en una clase, para que cuando creemos un objeto,
+ese objeto tenga todas esas funciones asociadas.
+
+Objetivo getters y setters: Proteger la data de ese objeto
+
+VARIABLE PRIVADA: Por convención se utiliza el guión bajo _
+Señal para otros desarrolladores que no se puede cambiar, pero tecnicamente no es privada.
+
+GETTERS: Método que permite acceder al valor de una propiedad privada _propiedad de forma indirecta, 
+asi protegemos el valor, no lo estamos cambiando directamente.
+GET permite OBTENER un valor, su objetivo es retornar el valor para usarlo en el programa en forma indirecta. 
+
+Sintaxis:
+get nombrePropiedad () {
+      retornamos ese valor que está protegido, pero tiene un intermediario en el proceso
+}
+
+SET es una funcion que permite actualizar el valor de una propiedad.
+son muy útiles porque primero podemos verificar el valor nuevo antes de asignarlo.
+Sin setter se podría cambiar el valor a cualquiera.
+Podemos usar condicionales para verificar si el valor es válido o no.
+
+*/
+
+class Libro {
+        constructor(autor) {
+          this._autor = autor;
+        }
+        get autor() {
+          //console.log("Aquí se activó el GETTER");
+          return this._autor;
+        }
+        set autor(nuevoAutor) {
+          console.log("Aquí se activó el SETTER");
+          this._autor = nuevoAutor;
+        }
+      }
+
+      const libro = new Libro("Anónimo");
+      console.log(libro.autor); // Aquí se activó el GETTER Anónimo
+      /*Podemos acceder a la propiedad autor aunque tuviese el guión bajo porque definimos un GETTER y
+      le asignamos el nombre a la propiedad autor() y 
+      luego fue llamado el getter, obteniendo indirectamente el valor a través del del getter
+      */
+
+      libro.autor = "Franz Kafka";
+      console.log(libro.autor); // Anonimo Aquí se activó el SETTER Franz Kafka
+
+
+
+
+
+</script>
