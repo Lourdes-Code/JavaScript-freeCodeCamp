@@ -1,46 +1,138 @@
 <script>
+//COMENTAR EN JS
+/*DATOS: Cualquier cosa que tenga sentido para la computadora
+  JavaScript proporciona ocho tipos de datos diferentes, 
+  los cuales son undefined, null, boolean, string, symbol, bigint, number, y object.   
+Las variables de computadora difieren de las variables matemáticas 
+en que pueden almacenar diferentes valores en diferentes momentos.
+*/
 
-        console.log("Hola Mundo");
+console.log("Hola Mundo");
 
-        var miVariable = "freeCodeCamp";
-        console.log(miVariable);
+//Declarar una variable        
+var leitoBonito_$1986_;
+/*Cuando las variables de JavaScript son declaradas, tienen un valor inicial de undefined (indefinido). 
+Si haces una operación matemática en una variable undefined, tu resultado será NaN lo que significa "Not a Number" (no es un número). 
+Si concatenas una cadena con una variable undefined, obtendrás una cadena de undefined.*/
 
-        miVariable = "Berny";
-        console.log(miVariable);
+//Inicializar variables con el operador de asignación
+var leitoBonito_$1986_ = 35;
 
-        var a = "Berny";
-        var b = a;
+//Almacenar valores con el operador de Asignación
+var miVariable = "freeCodeCamp";
+console.log(miVariable);
 
-        console.log(a);
-        console.log(b);
-        let variable1 = 120;
-        variable1 = variable1 +1;
-        console.log(variable1);
+miVariable = "Berny";
+console.log(miVariable);
 
-        variable1 += 2; //operador de asignación compuesta
-        console.log(variable1);
+//Asignar el valor de una variable a otra variable
+var a = "Berny"; //Declarando una variable de cadena
+var b = a;
+console.log(a);
+console.log(b);
+//
+//
+var a = 5;
+console.log(a); //5
+a = a + 1;
+console.log(a); //6
+console.log(a); //6
 
-        /* secuencias de escape
+/* La capitalización es importante en JS (sensibilidad a mayúsculas y minúsculas).
+Utilizar camelCase es una Buena Práctica.*/
 
-        \' comilla simple
-        \" comilla doble
-        \\ barra invertida
-        \n linea nueva
-        \r retorno de carro
-        \t tabulacion
-        \b retroceso
-        \f salto de páfina
-        ...
-        */
+var someVariable;
+var anotherVariableName;
+var thisVariableNameIsSoLong;
 
-        /* concatenacion strings: */
+/*  Identificadores de variables *
+Mayúsculas para valores inmutables (valores constantes).
+Minúsculas o camelCase para valores mutables (objetos y arreglos). 
+*/
 
-        let nombreCompleto = "Berny " + "Poblete";
-        console.log(nombreCompleto);
+const FCC = "freeCodeCamp";
+let fact = "is cool!";
+fact = "is awesome!";
+console.log(FCC, fact); // freeCodeCamp is awesome!
 
-        let verbo = "programar";
-        let mensaje = "Estoy aprendiendo a " + verbo + " con FreeCodeCamp";
-        console.log(mensaje);
+
+
+  var myFirstName = "Bernardita";
+  var myLastName = "Poblete";
+  let catName = "Oliver";
+  let catSound = "Meow!";
+
+
+
+
+
+/*  VAR vs. LET   */
+
+/* Una palabra clave llamada let fue introducida en ES6, 
+para resolver el problema potencial de sobreescribir la declaración de una variable
+con la palabra clave var*/
+var camper = "James";
+var camper = "David";
+console.log(camper); //"David"
+let camper = "James";
+let camper = "David"; //ERROR, solo puede declararse 1 vez.
+
+let variable1 = 120;
+variable1 = variable1 +1;
+console.log(variable1); //121
+
+variable1 += 2; //operador de asignación compuesta
+console.log(variable1); //122
+
+/*     CONST     */
+
+/* Variables de sólo lectura 
+Una variable asignada con const no se puede reasignar */
+
+const FAV_PET = "Cats";
+FAV_PET = "Dogs"; //ERROR
+
+
+
+/* Secuencias de Escape
+
+\' comilla simple
+\" comilla doble
+\\ barra invertida
+\n linea nueva
+\r retorno de carro
+\t tabulacion
+\b retroceso
+\f salto de página
+...
+
+*/
+
+// Incrementar un número en +1  con ++ (Decrementar con --)
+i++; 
+//es equivalente a 
+i = i + 1; 
+
+let myVar = 87;
+myVar++; //88
+/* Toda la línea se convierte en i++; 
+eliminando la necesidad del signo de igualdad. */
+let newVar = 87;
+newVar--; 
+console.log(newVar); //86
+newVar++;
+console.log(newVar); //87
+newVar++;
+console.log(newVar); //88
+
+        /*   Concatenacion de Strings:   */
+
+let nombreCompleto = "Berny " + "Poblete";
+console.log(nombreCompleto); // Berny Poblete
+
+let verbo = "programar";
+let mensaje = "Estoy aprendiendo a " + verbo + " con FreeCodeCamp";
+console.log(mensaje); // Estoy aprendiendo a programar con FreeCodeCamp
 
         let mensajeCompleto = "Estoy aprendiendo a programar";
         let parteFinal = " con FreeCodeCamp";
